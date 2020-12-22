@@ -33,7 +33,7 @@ def signup(request):
 
 
 def search(request):
-    query = request.POST['srch']
+    query = request.POST['search2']
     access_json = open(r'C:/Users/dell/projectd/mario/static/Indian_colleges_dataset.json')
     result = json.load(access_json)
     res = {}
