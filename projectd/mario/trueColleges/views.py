@@ -21,7 +21,7 @@ def font(request):
     return render(request, "Frntpg.html")
 
 
-def ind(request):
+def index(request):
     return render(request, "index.html")
 
 
@@ -29,26 +29,19 @@ def signup(request):
     return HttpResponse(request, "signup.html")
 
 
+
+
+
 def search(request):
-    return render(request, 'search.html')
-
-
-def add(request):
     query = request.POST['srch']
-    access_json = open(r'C:\Users\dell\projectd\mario\static\Indian_colleges_dataset.json')
+    access_json = open(r'C:/Users/dell/projectd/mario/static/Indian_colleges_dataset.json')
     result = json.load(access_json)
     res = {}
-    # changes done from collegesinfo.update \\\\\
-    collegesinfo = {}
     for i in range(len(result)):
         if query == result[i]['College Name']:
             res.update({'name': result[i]['College Name']})
             res.update({'type': result[i]['College Type']})
             res.update({'state': result[i]['State Name']})
             res.update({'uni': result[i]['University Name']})
-# changes done from collegesinfo.update \\\\\
-            collegesinfo.update({i: result[i]['name']})
-            result.update({'collegesinfo': collegesinfo})
-        else:
-            messages.error(request, 'No result found!!!')
-    return render(request, "result.html", {'result': result})
+   
+    return render(request, "search.html", {'res': res})
