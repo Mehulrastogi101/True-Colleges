@@ -43,5 +43,14 @@ def search(request):
             res.update({'type': result[i]['College Type']})
             res.update({'state': result[i]['State Name']})
             res.update({'uni': result[i]['University Name']})
+            break
+
+        elif query in result[i]['College Name']:
+        
+            res.update({'name': result[i]['College Name']})
+            res.update({'type': result[i]['College Type']})
+            res.update({'state': result[i]['State Name']})
+            res.update({'uni': result[i]['University Name']})
+            break
    
     return render(request, "search.html", {'res': res})
