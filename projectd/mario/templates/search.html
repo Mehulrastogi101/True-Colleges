@@ -112,7 +112,7 @@
 				<!-- Hero Slide -->
 				<div class="hero_slide">
 					<div class="hero_slide_background">
-						<img class="{%static 'hero_slide_background-img-top' %}" src="{%static 'images/early.png' %}" alt="" style="width:100%"></div>
+						<img class="{%static 'hero_slide_background-img-top' %}" src="{%static 'images/slider_background.jpg' %}" alt="" style="width:100%"></div>
 				       <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
 						<div class="hero_slide_content text-center">
 							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><span>Find Best Colleges Today!</span></h1>
@@ -156,7 +156,7 @@
                 <!-- Hero Slide -->
 				<div class="hero_slide">
 					<div class="hero_slide_background">
-                      <img class="{%static 'hero_slide_background-img-top' %}" src="{%static 'images/slider_background.jpg' %}" alt="" style="width:100%"></div>
+                      <img class="{%static 'hero_slide_background-img-top' %}" src="{%static 'images/early.png' %}" alt="" style="width:100%"></div>
 					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
 						<div class="hero_slide_content text-center">
 							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><span>Find Best Colleges Today!</span></h1>
@@ -221,22 +221,42 @@
 			 <input type="text" class="form-control" name="search2" placeholder="Search Here.." >
          <button type="submit"><i class="fa fa-search"></i></button>
 		 </form>
- 
-   <body>
+  
+  <body>
    <div class="col-lg-6 col-md-6 col-12">
         <ul>
-			<p><ul><li><b><strong>Top Results for Your College Info:
-		<ul>
-               {{ res.name }}<br>
-               {{res.type}}<br>
-               {{res.state}}<br>
-               {{res.uni}}<br>
+        	<div style= "color:blue">
+			<p><ul><li><b><strong><h2><u>Top Results for Your College Info:</u></h2></strong>
+		  	
+		
+			  <table border="10px" width="600px">
+			  <tr>
+			  <td>College Name:-</td>		
+		 	  <td>{{ res.name }}</td>
+		 	  </tr>
+		 	  <br><br>
+		 	  <tr>
+		 	  <td>College type:-</td>	
+              <td>{{res.type}}</td>
+              </tr>
+              <br><br>
+              <tr>
+              <td>State Name:-</td>	
+              <td>{{res.state}}</td>
+              </tr>
+              <br><br>
+              <tr>
+              <td>University Name:-</td>
+              <td>{{res.uni}}</td>
+              </tr>
+           </table>
+        
+          </div>
 
-                </ul>
-		</strong>
 		</b></li>
 
-</ul> </ul>  </div>
+      </ul> </ul>  </div>
+    
     {% if length < 1 %}
      <p>No search results found</p>
 
@@ -251,7 +271,8 @@
      Try more general keywords.
     </li>
  {% endif %}
-  </ul></ul></body>
+  </ul></ul>
+</body>
 
 
 
